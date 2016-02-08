@@ -16,8 +16,9 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 /**
  * Adds the current page title to the breadcrumb.
  *
- * Extend PathBased Breadcrumbs to include the current page title as an unlinked crumb.
- * The module uses the path if the title is unavailable and it excludes all admin paths.
+ * Extend PathBased Breadcrumbs to include the current page title as an unlinked
+ * crumb. The module uses the path if the title is unavailable and it excludes
+ * all admin paths.
  *
  * {@inheritdoc}
  */
@@ -47,4 +48,5 @@ class BreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
 
     return $breadcrumbs;
   }
+
 }
