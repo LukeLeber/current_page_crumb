@@ -35,6 +35,7 @@ class BreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
     $path_elements = explode('/', $path);
     $route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT);
 
+    // Do not adjust the breadcrumbs on admin paths.
     if ($route && !\Drupal::service('router.admin_context')->isAdminRoute()) {
       $title = \Drupal::service('title_resolver')->getTitle($request, $route);
       if (!isset($title)) {
