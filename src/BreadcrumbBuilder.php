@@ -47,6 +47,10 @@ class BreadcrumbBuilder extends PathBasedBreadcrumbBuilder {
       $breadcrumbs->addLink(Link::createFromRoute($title, '<none>'));
     }
 
+    // Add the full URL path as a cache context, since we will display the
+    // current page as part of the breadcrumb.
+    $breadcrumbs->addCacheContexts(['url.path']);
+
     return $breadcrumbs;
   }
 
